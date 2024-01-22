@@ -16,7 +16,7 @@ h1 {
   padding: 20px 0 20px 0;
 }
 
-span {
+.timer {
   display: block;
   color: rgb(185, 158, 0);
   padding: 0 0 20px 0;
@@ -37,7 +37,7 @@ span {
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  box-shadow: 3px 3px 2px black;
+  box-shadow: 3px 3px 10px black;
 }
 
 .top {
