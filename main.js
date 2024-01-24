@@ -1,8 +1,13 @@
 const seconds = document.querySelector(".seconds");
 const play = document.querySelector(".play");
 const pause = document.querySelector(".pause");
+const stop = document.querySelector(".stop");
+const items = document.querySelector(".items");
+const archive = document.querySelector(".archive");
+
 let secondInterval;
 let second = 0;
+let posCounter = 1;
 
 function startStopwatch() {
   play.classList.add("active");
@@ -21,5 +26,24 @@ function pauseStopwatch() {
   pause.classList.add("active");
 }
 
-pause.addEventListener("click", pauseStopwatch);
+function resetStopwatch() {
+  play.classList.remove("active");
+  pause.classList.remove("active");
+  //add to archive
+  const item = document.createElement("div");
+  item.textContent = `${posCounter++}. ${seconds.textContent}`;
+  items.appendChild(item);
+
+  clearInterval(secondInterval);
+  seconds.textContent = "0.00";
+  second = 0;
+  play.disabled = false;
+}
+
 play.addEventListener("click", startStopwatch);
+pause.addEventListener("click", pauseStopwatch);
+stop.addEventListener("click", resetStopwatch);
+archive.addEventListener("click", () => {
+  archive.classList.toggle("active");
+  items.classList.toggle("active");
+});

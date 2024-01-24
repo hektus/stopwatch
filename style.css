@@ -85,4 +85,15 @@ h1 {
 
 .active {
   color: rgb(185, 158, 0);
+  display: block;
+}
+
+.items {
+  display: none;
+  text-align: center;
+  color: white;
+}
+
+.items.active {
+  display: block;
 }
