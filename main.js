@@ -1,20 +1,25 @@
 const seconds = document.querySelector(".seconds");
 const play = document.querySelector(".play");
+const pause = document.querySelector(".pause");
+let secondInterval;
 let second = 0;
-let active = false;
 
 function startStopwatch() {
-  // sekundy
-  active = true;
-  setInterval(() => {
-    if (active) {
-      second++;
-      seconds.textContent = second;
-      play.disabled = true;
-    } else {
-      play.disabled = false;
-    }
-  }, 1000);
+  play.classList.add("active");
+  pause.classList.remove("active");
+  secondInterval = setInterval(() => {
+    second++;
+    seconds.textContent = (second / 100).toFixed(2);
+    play.disabled = true;
+  }, 10);
 }
 
+function pauseStopwatch() {
+  clearInterval(secondInterval);
+  play.disabled = false;
+  play.classList.remove("active");
+  pause.classList.add("active");
+}
+
+pause.addEventListener("click", pauseStopwatch);
 play.addEventListener("click", startStopwatch);

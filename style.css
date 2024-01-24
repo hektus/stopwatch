@@ -82,3 +82,7 @@ h1 {
 .brush {
   right: 30px;
 }
+
+.active {
+  color: rgb(185, 158, 0);
+}
