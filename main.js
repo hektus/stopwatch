@@ -4,6 +4,7 @@ const pause = document.querySelector(".pause");
 const stop = document.querySelector(".stop");
 const items = document.querySelector(".items");
 const archive = document.querySelector(".archive");
+const deleteBtn = document.querySelector(".delete");
 
 let secondInterval;
 let second = 0;
@@ -30,10 +31,12 @@ function resetStopwatch() {
   play.classList.remove("active");
   pause.classList.remove("active");
   //add to archive
+  if (seconds.textContent === "0.00") {
+    return;
+  }
   const item = document.createElement("div");
   item.textContent = `${posCounter++}. ${seconds.textContent}`;
   items.appendChild(item);
-
   clearInterval(secondInterval);
   seconds.textContent = "0.00";
   second = 0;
@@ -46,4 +49,8 @@ stop.addEventListener("click", resetStopwatch);
 archive.addEventListener("click", () => {
   archive.classList.toggle("active");
   items.classList.toggle("active");
+});
+deleteBtn.addEventListener("click", () => {
+  items.textContent = "";
+  posCounter = 1;
 });
