@@ -5,6 +5,11 @@ const stop = document.querySelector(".stop");
 const items = document.querySelector(".items");
 const archive = document.querySelector(".archive");
 const deleteBtn = document.querySelector(".delete");
+const brush = document.querySelector(".brush");
+const questions = document.querySelector(".ask");
+const colors = document.querySelector(".colors");
+
+const allBtn = [...document.querySelectorAll(".btn")];
 
 let secondInterval;
 let second = 0;
@@ -50,7 +55,13 @@ archive.addEventListener("click", () => {
   archive.classList.toggle("active");
   items.classList.toggle("active");
 });
+
 deleteBtn.addEventListener("click", () => {
   items.textContent = "";
   posCounter = 1;
+});
+
+brush.addEventListener("click", () => {
+  colors.classList.toggle("active");
+  brush.classList.toggle("active");
 });

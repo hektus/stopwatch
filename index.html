@@ -4,11 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stoper</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div class="wrapper">
+
+      <div class="popup">
+        <h2>Instrukcja:</h2>
+        <p><i class="fa-solid fa-play active"></i> - start</p>
+        <p><i class="fa-solid fa-pause active"></i> - pauza</p>
+        <p><i class="fa-solid fa-stop active"></i> - stop</p>
+        <p><i class="fa-solid fa-trash active"></i> - skasuj wszystko (łącznie z archiwum)</p>
+        <p><i>archiwum</i> - zobacz wcześniejsze pomiary</p>
+        <div><button class="btn">Zamknij</button></div>
+        
+      </div>
+
       <div class="main">
+        <div class="colors">
+          <div class="color gold"></div>
+          <div class="color red"></div>
+          <div class="color blue"></div>
+        </div>
         <div class="top">
           <div class="icon brush"><i class="fa-solid fa-brush"></i></div>
           <div class="icon ask"><i class="fa-solid fa-question"></i></div>
