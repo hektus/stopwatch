@@ -8,6 +8,12 @@ const deleteBtn = document.querySelector(".delete");
 const brush = document.querySelector(".brush");
 const questions = document.querySelector(".ask");
 const colors = document.querySelector(".colors");
+const popup = document.querySelector(".popup");
+const exit = document.querySelector(".exit");
+const red = document.querySelector(".red");
+const gold = document.querySelector(".gold");
+const blue = document.querySelector(".blue");
+const wrapper = document.querySelector(".wrapper");
 
 const allBtn = [...document.querySelectorAll(".btn")];
 
@@ -64,4 +70,43 @@ deleteBtn.addEventListener("click", () => {
 brush.addEventListener("click", () => {
   colors.classList.toggle("active");
   brush.classList.toggle("active");
+});
+
+questions.addEventListener("click", () => {
+  questions.classList.toggle("active");
+  popup.classList.toggle("active");
+  wrapper.classList.toggle("filter");
+});
+
+exit.addEventListener("click", () => {
+  questions.classList.toggle("active");
+  popup.classList.remove("active");
+  wrapper.classList.toggle("filter");
+});
+
+red.addEventListener("click", () => {
+  seconds.style.color = "red";
+  allBtn.forEach((el) => {
+    el.style.borderColor = "red";
+    el.style.borderBottom = "2px solid rgb(43, 43, 43)";
+    el.style.borderRight = "2px solid rgb(43, 43, 43)";
+  });
+});
+
+gold.addEventListener("click", () => {
+  seconds.style.color = "";
+  allBtn.forEach((el) => {
+    el.style.borderColor = "";
+    el.style.borderBottom = "";
+    el.style.borderRight = "";
+  });
+});
+
+blue.addEventListener("click", () => {
+  seconds.style.color = "blue";
+  allBtn.forEach((el) => {
+    el.style.borderColor = "blue";
+    el.style.borderBottom = "2px solid rgb(43, 43, 43)";
+    el.style.borderRight = "2px solid rgb(43, 43, 43)";
+  });
 });

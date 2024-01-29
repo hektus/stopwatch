@@ -88,7 +88,6 @@ h1 {
 
 .active {
   color: $main-color;
-  display: block;
 }
 
 .items {
@@ -99,6 +98,16 @@ h1 {
 
 .items.active {
   display: block;
+}
+
+.popup.active {
+  display: block;
+}
+
+.filter {
+  -webkit-filter: blur(15px);
+  filter: blur(15px);
+  pointer-events: none;
 }
 
 .colors {
@@ -138,8 +147,13 @@ h1 {
   position: absolute;
   z-index: 1;
   width: 350px;
-  background: rgb(80, 40, 133);
+  background: black;
   padding: 20px;
+  border-radius: 5px;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   h2 {
     color: white;
@@ -154,10 +168,15 @@ h1 {
 
   button {
     text-align: center;
+    margin-top: 10px;
   }
 
   div {
     width: 100%;
     text-align: center;
   }
+}
+
+.exit {
+  width: 150px;
 }

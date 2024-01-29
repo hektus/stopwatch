@@ -102,7 +102,6 @@ h1 {
 
 .active {
   color: rgba(255, 215, 0, 0.7);
-  display: block;
 }
 
 .items {
@@ -113,6 +112,16 @@ h1 {
 
 .items.active {
   display: block;
+}
+
+.popup.active {
+  display: block;
+}
+
+.filter {
+  -webkit-filter: blur(15px);
+  filter: blur(15px);
+  pointer-events: none;
 }
 
 .colors {
@@ -154,8 +163,14 @@ h1 {
   position: absolute;
   z-index: 1;
   width: 350px;
-  background: rgb(80, 40, 133);
+  background: black;
   padding: 20px;
+  border-radius: 5px;
+  display: none;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .popup h2 {
   color: white;
@@ -168,8 +183,13 @@ h1 {
 }
 .popup button {
   text-align: center;
+  margin-top: 10px;
 }
 .popup div {
   width: 100%;
   text-align: center;
+}
+
+.exit {
+  width: 150px;
 }/*# sourceMappingURL=style.css.map */
